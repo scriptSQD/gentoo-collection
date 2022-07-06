@@ -1,0 +1,3 @@
+[submodule "Yoga Slim 7 Pro/shell/.oh-my-zsh"]
+	path = Yoga Slim 7 Pro/shell/.oh-my-zsh
+	url = git@github.com:scriptSQD/ohmyzsh.git
