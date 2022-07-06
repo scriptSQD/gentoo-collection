@@ -37,3 +37,5 @@ sys-libs/libcxx libcxxabi libunwind
 media-video/pipewire -X bluetooth sound-server pipewire-alsa gstreamer
 
 media-video/vlc -X x265 dav1d mtp -pulseaudio gnome-keyring gstreamer
+
+app-portage/layman sync-plugin-portage subversion cvs
