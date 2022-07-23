@@ -1,0 +1,84 @@
+app-admin/doas persist
+
+sys-auth/pambase -passwdqc
+
+net-wireless/iwd standalone
+sys-apps/xdg-desktop-portal screencast
+media-plugins/alsa-plugins pulseaudio
+
+x11-terms/kitty -X
+
+kde-apps/kde-apps-meta -multimedia -games -accessibility -sdk
+
+dev-qt/qtwebengine bindist
+kde-apps/kdemultimedia-meta -cdrom
+
+www-client/firefox -X wayland wifi lto
+media-libs/libvpx postproc
+
+kde-apps/kdenetwork-meta -samba -dropbox -webengine
+kde-misc/kio-gdrive -share
+
+net-misc/networkmanager iwd bluetooth dhcpcd concheck
+x11-libs/libdrm video_cards_radeon
+
+media-libs/mesa vulkan -unwind llvm
+
+sys-devel/llvm AMDGPU X86 -test -debug -doc
+sys-devel/gcc graphite
+
+net-im/telegram-desktop -X dbus spell enchant -hunspell
+media-libs/tg_owt -X
+media-video/ffmpeg opus
+
+media-sound/pulseaudio-modules-bt ldac
+net-wireless/bluez experimental
+
+sys-libs/libcxx libcxxabi libunwind
+
+media-video/pipewire -X bluetooth sound-server pipewire-alsa gstreamer
+
+media-video/vlc -X x265 dav1d mtp -pulseaudio gnome-keyring gstreamer
+
+app-portage/layman sync-plugin-portage subversion cvs
+
+dev-lang/python lto
+
+media-gfx/imagemagick -openmp
+dev-lang/php sqlite gd pdo xmlreader zip curl truetype intl xmlwriter fpm
+app-eselect/eselect-php fpm
+
+net-misc/nextcloud-client -webengine dolphin
+dev-ruby/minitest ruby_targets_ruby31
+dev-ruby/power_assert ruby_targets_ruby31
+dev-ruby/rake ruby_targets_ruby31
+dev-ruby/rbs ruby_targets_ruby31
+dev-ruby/rexml ruby_targets_ruby31
+dev-ruby/rss ruby_targets_ruby31
+dev-ruby/test-unit ruby_targets_ruby31
+dev-ruby/typeprof ruby_targets_ruby31
+dev-ruby/bundler ruby_targets_ruby31
+dev-ruby/did_you_mean ruby_targets_ruby31
+dev-ruby/json ruby_targets_ruby31
+dev-ruby/rdoc ruby_targets_ruby31
+dev-ruby/psych ruby_targets_ruby31
+dev-ruby/kpeg ruby_targets_ruby31
+dev-ruby/racc ruby_targets_ruby31
+dev-ruby/stringio ruby_targets_ruby31
+virtual/rubygems ruby_targets_ruby31
+dev-ruby/rubygems ruby_targets_ruby31
+virtual/ruby-ssl ruby_targets_ruby31
+media-libs/babl introspection
+media-libs/gegl introspection
+
+media-video/pipewire sound-server
+media-sound/pulseaudio -daemon
+
+gui-wm/sway wallpapers grimshot
+gui-libs/wlroots vulkan
+dev-libs/bemenu -X
+
+gui-apps/waybar wifi network mpd
+media-fonts/fontawesome -X ttf
+
+media-gfx/darktable lto colord kwallet openmp opencl webp heif jpeg2k

@@ -1,0 +1,5 @@
+CFLAGS="${CFLAGS} -flto=thin"
+CXXFLAGS="${CXXFLAGS} -flto=thin"
+
+CC="gcc"                         
+CXX="g++"

@@ -2,4 +2,5 @@ sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE
 media-libs/faac MPEG-4
 app-editors/vscode Microsoft-vscode
 dev-libs/amdgpu-pro-opencl AMD-GPU-PRO-EULA
-
+media-libs/amdgpu-pro-vulkan AMD-GPU-PRO-EULA
+app-text/simplenote-bin GPL-2.0
