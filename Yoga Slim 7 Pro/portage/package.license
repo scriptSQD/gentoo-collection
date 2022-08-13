@@ -4,3 +4,6 @@ app-editors/vscode Microsoft-vscode
 dev-libs/amdgpu-pro-opencl AMD-GPU-PRO-EULA
 media-libs/amdgpu-pro-vulkan AMD-GPU-PRO-EULA
 app-text/simplenote-bin GPL-2.0
+app-arch/unrar unRAR
+dev-db/mongodb SSPL-1
+dev-util/android-studio android

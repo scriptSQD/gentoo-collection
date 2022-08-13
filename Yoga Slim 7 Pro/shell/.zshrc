@@ -1,5 +1,12 @@
+# VSCode Live Share ICU
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+
 # Qt Wayland
 export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# GPG TTY
+export GPG_TTY=$(tty)
 
 # Ctrl+Backspace kills previous word
 bindkey '^H' backward-kill-word
@@ -10,6 +17,8 @@ bindkey '^H' backward-kill-word
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+export PATH=/home/sqd/jdk-bin/bin:$PATH:/home/sqd/go/bin
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -24,7 +33,7 @@ autoload -U compinit promptinit
 compinit
 promptinit; prompt gentoo
 
-# COmpletion caching
+# Completion caching
 zstyle ':completion::complete:*' use-cache 1
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -36,3 +45,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass

@@ -1,0 +1,105 @@
+{
+    "position": "bottom",
+    "height": 40,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    // "modules-center": ["sway/window"],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "bluetooth",
+        "cpu",
+        "memory",
+        "backlight",
+        "battery",
+        "sway/language",
+        "clock",
+        "custom/shutdown",
+        "custom/reboot"
+    ],
+    "sway/workspaces": {
+        "format": "{name}. {icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": " / Web",
+            "2": " / Code",
+            "3": " / Term",
+            "4": " / Telegram",
+            "default": " / Other"
+        }
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false,
+        "interval": 2
+    },
+    "memory": {
+        "format": "{used:0.2f}GiB ",
+        "tooltip-format": "{used:0.2f}GiB of {total:0.2f}GiB available.",
+        "interval": 2
+    },
+    "backlight": {
+        "format": "{percent}% "
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} ",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 5
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "iwgtk"
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{desc}: {volume}% ",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "Muted ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-on": "On ",
+        "format-off": "Off ",
+        "format-connected": "{device_alias} ",
+        "format-connected-battery": "{device_alias} ({device_battery_percentage}%) ",
+        "tooltip-format": "Connected to {device_alias}",
+        "tooltip-format-connected-battery": "Connected to {device_alias} ({device_battery_percentage}% left)",
+	"on-click": "blueberry"
+    },
+    "custom/shutdown": {
+        "format": ""
+    },
+    "custom/reboot": {
+        "format": ""
+    }
+}

@@ -1,0 +1,2 @@
+exec setxkbmap -layout us,ru
+exec setxkbmap -option 'grp:win_space_toggle'

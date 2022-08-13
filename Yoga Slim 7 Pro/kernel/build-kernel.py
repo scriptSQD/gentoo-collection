@@ -38,7 +38,6 @@ log_dir = f"/tmp/build-kernel/{log_timestamp}"
 if not os.path.exists(log_dir):
     os.makedirs(log_dir)
 
-
 makeflags = '-j16'
 
 common_flags = "-march=znver3 -O2"
@@ -58,8 +57,12 @@ if not chdir_resp == None:
     print(Logger.error(f"!! Failed to move into src dir: {src_dir}!"))
     exit(1)
 
+if not (os.path.exists(f"{src_dir}/.config")):
+    print(Logger.warning(">> Kernel config was not found in sourcce directory, you might want to copy one or start off from scrath."))
+    input(">> To abort, press Ctrl+C. Otherwise press Return to continue.")
+
 print(Logger.log(">> Now running nconfig on current build tree."))
-sleep(3)
+sleep(2)
 
 nconfig_resp = os.system(f"make {makeopts} nconfig")
 if not nconfig_resp == 0:
@@ -67,7 +70,7 @@ if not nconfig_resp == 0:
     exit(1)
 
 print(Logger.log(">> Now proceeding to build kernel."))
-sleep(3)
+sleep(2)
 
 kernelbuild_resp = os.system(f"make {makeopts} | tee {log_dir}/kernelbuild-{log_timestamp}.log")
 if not kernelbuild_resp == 0:
@@ -76,7 +79,7 @@ if not kernelbuild_resp == 0:
     exit(1)
 
 print(Logger.log(">> Now proceeding to install modules."))
-sleep(3)
+sleep(2)
 
 modinstall_resp = os.system(f"make {makeopts} modules_install | tee {log_dir}/modinstall-{log_timestamp}.log")
 if not modinstall_resp == 0:
@@ -94,7 +97,7 @@ kver = os.popen("make -s kernelrelease").read();
 print(Logger.success(f">> Built and installed kernel: {kver}"))
 
 print(Logger.log(">> Finally, constructing initramfs with the help of Dracut!"))
-sleep(3)
+sleep(2)
 
 input(Logger.warning("\nWarning! If you already have an initramfs with the same kernel version, it will be overwritten. Press Enter to continue or Ctrl+C to abort."))
 
